@@ -1,6 +1,6 @@
 // src/components/layout/AppNavbar.jsx
 import { Navbar } from "flowbite-react";
-import { HiBars3 } from "react-icons/hi2";
+// import { HiBars3 } from "react-icons/hi2";
 
 export function AppNavbar({ toggleSidebar }) {
   return (
