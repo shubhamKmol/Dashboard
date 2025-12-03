@@ -1,0 +1,156 @@
+[
+  {
+    "id": "m1",
+    "name": "Acme Pay",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 120000,
+    "chargebackRatio": 1.4,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m2",
+    "name": "GlobalShop",
+    "country": "DE",
+    "status": "paused",
+    "monthlyVolume": 45000,
+    "chargebackRatio": 2.3,
+    "riskLevel": "high"
+  },
+  {
+    "id": "m3",
+    "name": "QuickTransfer",
+    "country": "IN",
+    "status": "active",
+    "monthlyVolume": 98000,
+    "chargebackRatio": 0.9,
+    "riskLevel": "low"
+  },
+  {
+    "id": "m4",
+    "name": "EasyTickets",
+    "country": "UK",
+    "status": "blocked",
+    "monthlyVolume": 15000,
+    "chargebackRatio": 3.1,
+    "riskLevel": "high"
+  },
+  {
+    "id": "m5",
+    "name": "LocalMart",
+    "country": "IN",
+    "status": "active",
+    "monthlyVolume": 28000,
+    "chargebackRatio": 1.8,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m6",
+    "name": "PayMax",
+    "country": "SG",
+    "status": "active",
+    "monthlyVolume": 210000,
+    "chargebackRatio": 2.7,
+    "riskLevel": "high"
+  },
+  {
+    "id": "m7",
+    "name": "Alpha Services",
+    "country": "AU",
+    "status": "paused",
+    "monthlyVolume": 60000,
+    "chargebackRatio": 1.0,
+    "riskLevel": "low"
+  },
+  {
+    "id": "m8",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m89",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m88",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m87",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m86",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m85",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m84",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m83",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m82",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  },
+  {
+    "id": "m81",
+    "name": "FinFast",
+    "country": "US",
+    "status": "active",
+    "monthlyVolume": 162000,
+    "chargebackRatio": 2.2,
+    "riskLevel": "medium"
+  }
+  
+]
