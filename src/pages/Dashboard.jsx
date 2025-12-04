@@ -7,53 +7,48 @@ import StatusChart from "../components/dashboard/StatusChart";
 export default function Dashboard({ merchants = [], isLoading }) {
   return (
     <div className="space-y-6">
-      <div>
-        <h1 className="text-xl font-semibold text-slate-100">
-          Dashboard
-        </h1>
-        <p className="text-sm text-slate-400">
-          Overview of merchant performance and risk.
-        </p>
+
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <h1 className="text-xl font-semibold text-slate-100">Dashboard</h1>
+          <p className="text-sm text-slate-400">
+            Overview of merchant performance and risk.
+          </p>
+        </div>
       </div>
 
-      {/* 3 summary stats */}
+      {/* Stats */}
       <StatsCards merchants={merchants} isLoading={isLoading} />
 
-      {/* Separate containers for each chart */}
-      {/* Separate containers for each chart */}
-      <div className="grid gap-6 md:grid-cols-2 items-stretch">
-        {/* Bar + status chart card */}
-        <div className="rounded-xl border border-slate-600 bg-slate-950/90 p-4 flex flex-col">
+      {/* Charts row */}
+      <div className="grid gap-6 lg:grid-cols-2">
+        
+        {/* Left card */}
+        <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 flex flex-col">
           <h2 className="text-sm font-medium text-slate-200">
             Volume by risk level
           </h2>
 
-          {/* body: take remaining height and space charts nicely */}
-          <div className="mt-3 flex-1 flex flex-col justify-between">
+          <div className="mt-4">
             <Chart merchants={merchants} isLoading={isLoading} />
-
-            <div className="mt-4">
-              <h2 className="text-sm font-medium text-slate-200 mb-2">
-                Status for merchants
-              </h2>
-              <StatusChart merchants={merchants} isLoading={isLoading} />
-            </div>
           </div>
+
+          <h2 className="text-sm font-medium text-slate-200 mt-6 mb-2">
+            Status for merchants
+          </h2>
+          <StatusChart merchants={merchants} isLoading={isLoading} />
         </div>
 
-        {/* Pie chart card */}
-        <div className="rounded-xl border border-slate-600 bg-slate-950/90 p-4 flex flex-col">
-          <h2 className="mb-3 text-sm font-medium text-slate-200">
+        {/* Right card */}
+        <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 flex flex-col">
+          <h2 className="text-sm font-medium text-slate-200 mb-3">
             Merchants by country (%)
           </h2>
-
-          {/* body: center pie vertically */}
-          <div className="flex-1 flex items-center justify-center">
-            <CountryPieChart merchants={merchants} isLoading={isLoading} />
-          </div>
+          <CountryPieChart merchants={merchants} isLoading={isLoading} />
         </div>
       </div>
-
     </div>
   );
 }
+

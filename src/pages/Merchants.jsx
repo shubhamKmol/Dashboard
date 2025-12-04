@@ -112,29 +112,33 @@ export default function Merchants({
   return (
     <>
       <div className="space-y-4">
-        <div className="flex items-start justify-between gap-3">
-          <div>
-            {/* <h1 className="text-xl font-semibold text-slate-800">Merchants</h1> */}
-            {/* <p className="text-sm text-slate-500"> */}
-            <h1 className="text-xl font-semibold text-slate-800 dark:text-slate-100">
-              Merchants
-            </h1>
-            <p className="text-sm text-slate-500 dark:text-slate-400">
+<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
 
-              Search, filter and review merchant performance.
-            </p>
-          </div>
-          <Button
-            size="sm"
-            onClick={handleAddClick}
-            color="light"
-            // pill
-            className="px-4 font-medium"
-          >
-            + Add merchant
-          </Button>
+  {/* Left side — title + description */}
+  <div>
+    <h2 className="text-xl font-semibold text-white">Merchants</h2>
+    <p className="text-sm text-slate-400">
+      Search, filter and review merchant performance.
+    </p>
+  </div>
 
-        </div>
+  {/* Right side — Add merchant button */}
+  <button
+    className="
+      mt-3 sm:mt-0
+      inline-flex items-center justify-center
+      px-4 py-2 
+      rounded-lg 
+      bg-slate-800 border border-slate-700 
+      text-white text-sm font-medium
+      hover:bg-slate-700
+    "
+  >
+    + Add merchant
+  </button>
+
+</div>
+
 
         <MerchantFilters
           search={search}

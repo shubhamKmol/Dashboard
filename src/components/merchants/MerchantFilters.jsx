@@ -1,4 +1,3 @@
-// src/components/merchants/MerchantFilters.jsx
 import { TextInput, Select } from "flowbite-react";
 
 const statusOptions = [
@@ -28,10 +27,14 @@ export default function MerchantFilters({
   onSortDirectionToggle,
 }) {
   return (
-    <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between mb-4">
-      <div className="flex flex-1 gap-3">
-        <div className="flex-1">
-          <label className="block text-xs font-medium text-slate-600 mb-1">
+    <div className="flex flex-col gap-6 mb-4">
+
+      {/* FILTER GRID */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        {/* Search */}
+        <div className="w-full">
+          <label className="block text-xs font-medium text-slate-400 mb-1">
             Search by name
           </label>
           <TextInput
@@ -41,14 +44,12 @@ export default function MerchantFilters({
           />
         </div>
 
-        <div>
-          <label className="block text-xs font-medium text-slate-600 mb-1">
+        {/* Status */}
+        <div className="w-full">
+          <label className="block text-xs font-medium text-slate-400 mb-1">
             Status
           </label>
-          <Select
-            value={status}
-            onChange={(e) => onStatusChange(e.target.value)}
-          >
+          <Select value={status} onChange={(e) => onStatusChange(e.target.value)}>
             {statusOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
                 {opt.label}
@@ -57,8 +58,9 @@ export default function MerchantFilters({
           </Select>
         </div>
 
-        <div>
-          <label className="block text-xs font-medium text-slate-600 mb-1">
+        {/* Risk */}
+        <div className="w-full">
+          <label className="block text-xs font-medium text-slate-400 mb-1">
             Risk
           </label>
           <Select value={risk} onChange={(e) => onRiskChange(e.target.value)}>
@@ -71,32 +73,39 @@ export default function MerchantFilters({
         </div>
       </div>
 
-      <div className="flex items-end gap-2">
-        <div>
-          <label className="block text-xs font-medium text-slate-600 mb-1">
+      {/* SORT ROW */}
+      <div className="flex flex-col sm:flex-row sm:items-end gap-4">
+
+        <div className="flex-1 sm:flex-none">
+          <label className="block text-xs font-medium text-slate-400 mb-1">
             Sort by
           </label>
           <Select
             value={sortField}
             onChange={(e) => onSortFieldChange(e.target.value)}
+            className="w-full"
           >
             <option value="monthlyVolume">Monthly volume</option>
             <option value="chargebackRatio">Chargeback ratio</option>
           </Select>
         </div>
-       <button
-  type="button"
-  onClick={onSortDirectionToggle}
-  className={`h-10 px-3 rounded-lg border text-xs font-medium flex items-center
-    ${
-      sortDirection === "asc"
-        ? "bg-blue-600 border-blue-500 text-white hover:bg-blue-700"
-        : "bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700"
-    }`}
->
-  {sortDirection === "asc" ? "Asc ↑" : "Desc ↓"}
-</button>
+
+        <button
+          type="button"
+          onClick={onSortDirectionToggle}
+          className={`h-10 px-4 rounded-lg border text-xs font-medium 
+            sm:w-auto w-full 
+          ${
+            sortDirection === "asc"
+              ? "bg-blue-600 border-blue-500 text-white hover:bg-blue-700"
+              : "bg-slate-800 border-slate-700 text-slate-200 hover:bg-slate-700"
+          }`}
+        >
+          {sortDirection === "asc" ? "Asc ↑" : "Desc ↓"}
+        </button>
+
       </div>
     </div>
   );
 }
+

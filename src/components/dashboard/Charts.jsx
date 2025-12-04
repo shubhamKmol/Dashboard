@@ -33,8 +33,8 @@ export default function Chart({ merchants = [], isLoading }) {
   };
 
   return (
-    <div className="h-40 w-full flex items-center">
-      <div className="w-full space-y-3">
+<div className="min-h-[140px] w-full flex items-center">
+          <div className="w-full space-y-3">
               {chartData.map((item) => {
         const value = data[item.key] || 0;
         const widthPercent = (value / maxValue) * 100;
