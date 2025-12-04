@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
-import { Button } from "flowbite-react";
+// import { Button } from "flowbite-react";
 import MerchantFilters from "../components/merchants/MerchantFilters";
 import MerchantTable from "../components/merchants/MerchantTable";
 import MerchantDetailModal from "../components/merchants/MerchantDetailModal";
@@ -112,19 +112,19 @@ export default function Merchants({
   return (
     <>
       <div className="space-y-4">
-<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
 
-  {/* Left side — title + description */}
-  <div>
-    <h2 className="text-xl font-semibold text-white">Merchants</h2>
-    <p className="text-sm text-slate-400">
-      Search, filter and review merchant performance.
-    </p>
-  </div>
+          {/* Left side — title + description */}
+          <div>
+            <h2 className="text-xl font-semibold text-white">Merchants</h2>
+            <p className="text-sm text-slate-400">
+              Search, filter and review merchant performance.
+            </p>
+          </div>
 
-  {/* Right side — Add merchant button */}
-  <button
-    className="
+          {/* Right side — Add merchant button */}
+          <button
+            className="
       mt-3 sm:mt-0
       inline-flex items-center justify-center
       px-4 py-2 
@@ -132,12 +132,11 @@ export default function Merchants({
       bg-slate-800 border border-slate-700 
       text-white text-sm font-medium
       hover:bg-slate-700
-    "
-  >
-    + Add merchant
-  </button>
-
-</div>
+    " onClick={handleAddClick}
+          >
+            + Add merchant
+          </button>
+        </div>
 
 
         <MerchantFilters
@@ -190,7 +189,7 @@ export default function Merchants({
                   : "text-slate-700 border-slate-300 hover:bg-slate-100"
                   }`}
               >
-                 {"<"}
+                {"<"}
               </button>
               <span>
                 Page{" "}
