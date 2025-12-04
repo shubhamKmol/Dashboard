@@ -30,7 +30,7 @@ export default function MerchantDetailModal({
             onClose();
             return;
         }
-
+//validation in case of active staus and high risk also added a customize validation if charge back is more than 2%
         const highChargeback = merchant.chargebackRatio > 2;
         const isActivating = status === "active";
         const isHighRiskActive = isActivating && riskLevel === "high";
@@ -62,7 +62,6 @@ export default function MerchantDetailModal({
     return (
         <div className="fixed inset-0 z-40 flex items-center justify-center bg-black/60">
             <div className="w-full max-w-xl rounded-xl border border-slate-700 bg-slate-900 p-6 shadow-2xl">
-                {/* Header */}
                 <div className="flex items-center justify-between mb-4">
                     <h2 className="text-lg font-semibold text-slate-50">
                         Merchant details
@@ -75,7 +74,6 @@ export default function MerchantDetailModal({
                     </button>
                 </div>
 
-                {/* Body */}
                 <div className="space-y-4 text-sm">
                     <div>
                         <p className="text-base font-semibold text-slate-50">
@@ -99,7 +97,7 @@ export default function MerchantDetailModal({
                         </div>
                     </div>
 
-                    {/* Editable fields */}
+                    {/* Editable fields status and risk level */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="block text-xs font-medium text-slate-300 mb-1">
@@ -150,7 +148,6 @@ export default function MerchantDetailModal({
                     </div>
                 </div>
 
-                {/* Footer */}
                 <div className="mt-6 flex justify-between">
                     <div>
                         {onEdit && (
@@ -158,7 +155,7 @@ export default function MerchantDetailModal({
                                 type="button"
                                 onClick={() => {
                                     onEdit(merchant);
-                                    onClose();  // close detail modal when opening form
+                                    onClose();  
                                 }}
                                 className="rounded-lg border border-slate-600 px-3 py-1.5 text-xs font-medium text-slate-200 hover:bg-slate-800"
                             >

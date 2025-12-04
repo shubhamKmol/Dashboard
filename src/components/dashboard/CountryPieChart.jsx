@@ -10,7 +10,7 @@ const COLORS = [
     "#f97373", // red-400
 ];
 
-export default function CountryPieChart({ merchants = [], isLoading }) {
+export default function CountryPieChart({ merchants = [],error, isLoading }) {
     const data = useMemo(() => {
         const counts = merchants.reduce((acc, m) => {
             const country = m.country || "Unknown";
@@ -33,13 +33,21 @@ export default function CountryPieChart({ merchants = [], isLoading }) {
         }));
     }, [merchants]);
 
+
     if (isLoading) {
         return (
-            <div className="flex items-center justify-center h-64">
+            <div className="flex items-center justify-center h-48">
                 <div className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-slate-300 animate-spin" />
             </div>
         );
     }
+    if (error) {
+    return (
+      <div className="text-red-400 bg-red-900/40 border border-red-600 p-4 rounded-lg">
+        Something went wrong loading dashboard data.
+      </div>
+    );
+  }
 
     if (!data.length) {
         return (

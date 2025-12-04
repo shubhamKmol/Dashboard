@@ -1,14 +1,20 @@
 // src/components/dashboard/Chart.jsx
 
-export default function Chart({ merchants = [], isLoading }) {
-  if (isLoading) {
+export default function Chart({ merchants = [],error, isLoading }) {
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center h-48">
+                <div className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-slate-300 animate-spin" />
+            </div>
+        );
+    }
+    if (error) {
     return (
-      <div className="flex items-center justify-center h-40">
-        <div className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-slate-300 animate-spin" />
+      <div className="text-red-400 bg-red-900/40 border border-red-600 p-4 rounded-lg">
+        Something went wrong loading dashboard data.
       </div>
     );
   }
-
   // Normalize riskLevel to lowercase so your data matches chart keys
   const data = merchants.reduce((acc, m) => {
     const risk = (m.riskLevel || "").toLowerCase(); 

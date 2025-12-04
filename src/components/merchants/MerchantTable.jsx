@@ -8,9 +8,8 @@ function StatusBadge({ status }) {
   };
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-        map[status] || "bg-slate-100 text-slate-700"
-      }`}
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${map[status] || "bg-slate-100 text-slate-700"
+        }`}
     >
       {status}
     </span>
@@ -25,17 +24,16 @@ function RiskBadge({ riskLevel }) {
   };
   return (
     <span
-      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${
-        map[riskLevel] ||
+      className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${map[riskLevel] ||
         "bg-slate-50 text-slate-700 border border-slate-100"
-      }`}
+        }`}
     >
       {riskLevel}
     </span>
   );
 }
 
-export default function MerchantTable({ merchants, isLoading, onRowClick }) {
+export default function MerchantTable({ merchants, isLoading, error, onRowClick }) {
   // Target visual rows per page (match your pageSize in Merchants.jsx)
   const FIXED_ROWS = 10;
 
@@ -47,12 +45,19 @@ export default function MerchantTable({ merchants, isLoading, onRowClick }) {
     showNoDataRow = true;
     effectiveRows = [];
   }
+  if (error) {
+    return (
+      <div className="text-red-400 bg-red-900/40 border border-red-600 p-4 rounded-lg">
+        Something went wrong loading dashboard data.
+      </div>
+    );
+  }
 
   const actualRowCount = isLoading
     ? FIXED_ROWS
     : showNoDataRow
-    ? 1
-    : effectiveRows.length;
+      ? 1
+      : effectiveRows.length;
 
   const fillerRows =
     actualRowCount < FIXED_ROWS ? FIXED_ROWS - actualRowCount : 0;
@@ -78,7 +83,6 @@ export default function MerchantTable({ merchants, isLoading, onRowClick }) {
         </thead>
         <tbody>
           {isLoading ? (
-            // Skeleton rows to fill fixed height
             [...Array(FIXED_ROWS)].map((_, i) => (
               <tr key={`skeleton-${i}`} className="border-b border-slate-100">
                 <td colSpan={6} className="px-4 py-3">
@@ -130,7 +134,6 @@ export default function MerchantTable({ merchants, isLoading, onRowClick }) {
                 </tr>
               ))}
 
-              {/* Filler rows to preserve height */}
               {[...Array(fillerRows)].map((_, i) => (
                 <tr
                   key={`filler-${i}`}

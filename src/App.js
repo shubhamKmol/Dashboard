@@ -3,29 +3,30 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppLayout } from "./components/layout/AppLayout";
 import Dashboard from "./pages/Dashboard";
 import Merchants from "./pages/Merchants";
-// import { useMerchants } from "./hook/useMerchants"; // <- make sure folder name matches
 import useMerchants from "./hook/useMerchants"
 function App() {
-  const { merchants, isLoading, addMerchant, updateMerchant } = useMerchants();
+  //Custom Hook to handle CRUD operations
+  const { merchants, isLoading, error,addMerchant, updateMerchant } = useMerchants();
 
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<AppLayout />}>
-          {/* Dashboard: pass merchants + isLoading */}
+          {/* Default landing page Dashboard */}
           <Route
             index
             element={
-              <Dashboard merchants={merchants} isLoading={isLoading} />
+              <Dashboard merchants={merchants} error={error} isLoading={isLoading} />
             }
           />
 
-          {/* Merchants: full CRUD props */}
+          {/* on click of merchant tab routing changes to "/merchant" */}
           <Route
             path="merchants"
             element={
               <Merchants
                 merchants={merchants}
+                error={error}
                 isLoading={isLoading}
                 addMerchant={addMerchant}
                 updateMerchant={updateMerchant}

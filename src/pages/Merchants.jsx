@@ -114,7 +114,6 @@ export default function Merchants({
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
 
-          {/* Left side — title + description */}
           <div>
             <h2 className="text-xl font-semibold text-white">Merchants</h2>
             <p className="text-sm text-slate-400">
@@ -122,7 +121,6 @@ export default function Merchants({
             </p>
           </div>
 
-          {/* Right side — Add merchant button */}
           <button
             className="
       mt-3 sm:mt-0

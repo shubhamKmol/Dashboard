@@ -1,0 +1,26 @@
+Test case :
+	1. Add Merchant:
+		a. go to merchant tab by clicking on the bag icon on sidebar.
+		b. click on Add Merchant button.
+		c. sliding window will appear with Form, add merchant details and save.
+		d. verify if the merchant is added in Merchant table.
+		e. also verify if the stats are updated in dashboard tab with the latest merchant information 
+
+
+	2. Edit Merchant:
+		a. go to merchant tab by clicking on the bag icon on sidebar
+		b. click on the merchant row  which you want to edit.
+		c. popup will appear including details where parameters like “status” and “risk level” can be edited and rest are read-only.
+		d. if user need to edit read-only parameters then can click on edit full details to edit full details.
+
+	3. Validation:
+		a. go to merchant tab by clicking on the bag icon on sidebar.
+		b. click on the merchant row/data to edit.
+		c. popup will appear including details where parameters like “status” and “risk level” can be edited and rest are read-only.
+		d. edit “Status” to active  and “Risk level” to high and click save changes
+		e. alert box should be visible showing message “This merchant is marked as HIGH risk and you are setting status to ACTIVE. Are you sure you want to proceed?”
+ 	
+	
+ 
+
+ 

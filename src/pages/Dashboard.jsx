@@ -4,7 +4,8 @@ import Chart from "../components/dashboard/Charts";
 import CountryPieChart from "../components/dashboard/CountryPieChart";
 import StatusChart from "../components/dashboard/StatusChart";
 
-export default function Dashboard({ merchants = [], isLoading }) {
+export default function Dashboard({ merchants = [], error,isLoading }) {
+  
   return (
     <div className="space-y-6">
 
@@ -18,34 +19,34 @@ export default function Dashboard({ merchants = [], isLoading }) {
         </div>
       </div>
 
-      {/* Stats */}
-      <StatsCards merchants={merchants} isLoading={isLoading} />
+      {/* Stats  cards*/}
+      <StatsCards merchants={merchants} error={error} isLoading={isLoading} />
 
-      {/* Charts row */}
+      {/* Charts section */}
       <div className="grid gap-6 lg:grid-cols-2">
         
-        {/* Left card */}
+        {/* bar chart card */}
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 flex flex-col">
           <h2 className="text-sm font-medium text-slate-200">
             Volume by risk level
           </h2>
 
           <div className="mt-4">
-            <Chart merchants={merchants} isLoading={isLoading} />
+            <Chart merchants={merchants} error={error} isLoading={isLoading} />
           </div>
 
           <h2 className="text-sm font-medium text-slate-200 mt-6 mb-2">
             Status for merchants
           </h2>
-          <StatusChart merchants={merchants} isLoading={isLoading} />
+          <StatusChart merchants={merchants} error={error} isLoading={isLoading} />
         </div>
 
-        {/* Right card */}
+        {/* pie chart card */}
         <div className="rounded-xl border border-slate-700 bg-slate-900 p-4 flex flex-col">
           <h2 className="text-sm font-medium text-slate-200 mb-3">
             Merchants by country (%)
           </h2>
-          <CountryPieChart merchants={merchants} isLoading={isLoading} />
+          <CountryPieChart merchants={merchants}error={error}  isLoading={isLoading} />
         </div>
       </div>
     </div>

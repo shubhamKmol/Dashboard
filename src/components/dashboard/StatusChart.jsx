@@ -1,6 +1,6 @@
 // src/components/dashboard/StatusChart.jsx
 
-export default function StatusChart({ merchants = [], isLoading }) {
+export default function StatusChart({ merchants = [],error, isLoading }) {
     if (isLoading) {
         return (
             <div className="flex items-center justify-center h-48">
@@ -8,6 +8,14 @@ export default function StatusChart({ merchants = [], isLoading }) {
             </div>
         );
     }
+    if (error) {
+    return (
+      <div className="text-red-400 bg-red-900/40 border border-red-600 p-4 rounded-lg">
+        Something went wrong loading dashboard data.
+      </div>
+    );
+  }
+
 
     // Aggregate count by normalized status
     const data = merchants.reduce((acc, m) => {
