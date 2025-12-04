@@ -10,20 +10,23 @@ function StatSkeleton() {
 }
 
 export default function StatsCards({ merchants = [],error, isLoading }) {
-    if (isLoading) {
-        return (
-            <div className="flex items-center justify-center h-48">
-                <div className="h-10 w-10 rounded-full border-2 border-slate-600 border-t-slate-300 animate-spin" />
-            </div>
-        );
-    }
-    if (error) {
+  if (isLoading) {
+    return (
+      <div className="grid gap-4 md:grid-cols-3">
+        <StatSkeleton />
+        <StatSkeleton />
+        <StatSkeleton />
+      </div>
+    );
+  }
+  if (error) {
     return (
       <div className="text-red-400 bg-red-900/40 border border-red-600 p-4 rounded-lg">
         Something went wrong loading dashboard data.
       </div>
     );
   }
+
 
   const totalMerchants = merchants.length || 0;
   const totalVolume = merchants.reduce(
